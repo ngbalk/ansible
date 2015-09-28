@@ -3,7 +3,7 @@
 - name: Create Download dir
   file: path=/home/{{user_name}}/downloads state=directory mode=0755
 
-- name: Download EAP {{eap_version}}
+- name: Download EAP
   get_url: url=http://download.devel.redhat.com/released/JBEAP-6/{{eap_version}}/jboss-eap-{{eap_version}}-full-build.zip dest=/home/{{user_name}}/downloads
 
 - name: Install unzip
