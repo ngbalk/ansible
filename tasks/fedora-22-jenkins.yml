@@ -1,0 +1,8 @@
+- name: Update Fedora 22 Instance and Install EAP with Jenkins
+  hosts: web
+  user: fedora
+
+  tasks:
+    - include: tasks/update-fedora.yml
+    - include: public-install-eap.yml
+    - include: tasks/install-jenkins.yml

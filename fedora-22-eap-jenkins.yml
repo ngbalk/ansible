@@ -1,0 +1,16 @@
+- name: Update Fedora 22 Instance and Install Tomcat with Jenkins
+  hosts: web
+  user: fedora
+  vars:
+    eap_version: 6.4.2
+    user_name: fedora
+
+  tasks:
+    - include: tasks/update-fedora.yml
+    - include: tasks/private-install-eap.yml
+    - include: tasks/eap-6.4-configuration.yml
+    - include: tasks/install-jenkins.yml
+    - include: tasks/start-eap.yml
+
+
+

@@ -1,0 +1,10 @@
+[Unit]
+Description=Jenkins Daemon
+
+[Service]
+SuccessExitStatus=143
+ExecStart=/usr/bin/java -jar /etc/jenkins.war
+User=fedora
+
+[Install]
+WantedBy=multi-user.target
