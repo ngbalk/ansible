@@ -1,14 +1,14 @@
 # This playbox updates a fedora 22 instance and installs EAP 6.4
 
 - name: Update Fedora 22 Instance
-  hosts: os1_private
+  hosts: web
   user: fedora
 
   tasks:
-#    - include: tasks/update-fedora.yml
+   - include: tasks/update-fedora.yml
 
 - name: Install BPM {{bpm_version}} on EAP {{eap_version}}
-  hosts: os1_private
+  hosts: web
   user: fedora
 
   environment:

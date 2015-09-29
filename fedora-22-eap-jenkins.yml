@@ -1,4 +1,4 @@
-- name: Update Fedora 22 Instance and Install Tomcat with Jenkins
+- name: Update Fedora 22 Instance and Install EAP with Jenkins
   hosts: web
   user: fedora
   vars:

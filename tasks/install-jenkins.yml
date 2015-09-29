@@ -1,20 +1,7 @@
 # Install Jenkins
 
    - name: Download Jenkins
-     get_url: url=https://updates.jenkins-ci.org/download/war/1.630/jenkins.war dest=/etc/
-
-   - name: Configure Jenkins Service Path
-     copy: src=files/jenkins dest=/etc/sysconfig/jenkins owner=fedora group=fedora
-
-   - name: Configure Jenkins as a Service
-     copy: src=files/jenkins.service dest=/etc/systemd/system/jenkins.service owner=fedora group=fedora
-
-   - name: Reload System Services
-     command: systemctl daemon-reexec
-     command: systemctl daemon-reload
+     get_url: url=https://updates.jenkins-ci.org/download/war/1.630/jenkins.war dest=/home/{{user_name}}/
 
    - name: Deploy Jenkins into EAP
-     command: cp /etc/jenkins.war /home/{{user_name}}/jboss-eap-6.4/standalone/deployments/
-
-   # - name: Start Jenkins
-   #   service: name=jenkins.service state=started		
+     command: cp /home/{{user_name}}/jenkins.war /home/{{user_name}}/jboss-eap-6.4/standalone/deployments/	
