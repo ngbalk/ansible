@@ -1,24 +1,22 @@
 # This playbox updates a fedora 22 instance and installs EAP 6.4
 
-- name: Update Fedora 22 Instance
-  hosts: web
+- name: Update Fedora 22 Instance and Install EAP with BPM
+  hosts: bpm_machine
   user: fedora
-
-  tasks:
-   - include: tasks/update-fedora.yml
-
-- name: Install BPM {{bpm_version}} on EAP {{eap_version}}
-  hosts: web
-  user: fedora
+  vars:
+    eap_version: 6.4.3
+    bpm_version: 6.1.3
+    user_name: fedora
 
   environment:
    INVENTORY_HOSTNAME: "{{ inventory_hostname }}"
 
   tasks:
-    - include: tasks/private-install-eap.yml
+    - include: tasks/update-fedora.yml
     - include: tasks/private-install-bpm.yml
     - include: tasks/eap-configuration.yml
     - include: tasks/maven-configuration.yml
     - include: tasks/start-eap.yml
 
-  # http://download.eng.bos.redhat.com/brewroot/repos/jb-ip-6.1-build/latest/maven/org/jboss/ip/jboss-bpmsuite/6.1.2.GA-redhat-3/jboss-bpmsuite-6.1.2.GA-redhat-3-deployable-eap6.x.zip
+# BPM 6.1.3 Internal Release Download
+# http://download.eng.bos.redhat.com/brewroot/repos/jb-ip-6.1-build/latest/maven/org/jboss/ip/jboss-bpmsuite/6.1.3.GA-redhat-2/jboss-bpmsuite-6.1.3.GA-redhat-2-deployable-eap6.x.zip

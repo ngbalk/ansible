@@ -1,7 +1,10 @@
 # Installs a BPM via Red Hat internal downloads
 
-- name: Download BPM {{bpm_version}}
-  get_url: url=http://dev138.mw.lab.eng.bos.redhat.com/candidate/bpmsuite-{{bpm_version}}/jboss-bpmsuite-{{bpm_version}}-deployable-eap6.x.zip dest=~/downloads
+- name: Create Download Directory
+  file: path=/home/{{user_name}}/downloads state=directory mode=0755
+
+- name: Download BPM
+  get_url: url=http://download.eng.bos.redhat.com/brewroot/repos/jb-ip-6.1-build/latest/maven/org/jboss/ip/jboss-bpmsuite/{{bpm_version}}.GA-redhat-2/jboss-bpmsuite-{{bpm_version}}.GA-redhat-2-deployable-eap6.x.zip dest=/home/{{user_name}}/downloads
 
 - name: Install unzip
   sudo: true
@@ -12,7 +15,4 @@
   dnf: name=git state=latest
 
 - name: Extract BPM
-  unarchive: src=~/downloads/jboss-bpmsuite-{{bpm_version}}-deployable-eap6.x.zip dest=~ copy=no owner=fedora group=fedora
-
-#- name: Copy BPM specific standalone.xml
-#  copy: src=files/bpm-{{ bpm_version }}-standalone.xml dest=~/jboss-eap-6.4/standalone/configuration/standalone.xml owner=fedora group=fedora
+  unarchive: src=/home/{{user_name}}/downloads/jboss-bpmsuite-{{bpm_version}}.GA-redhat-2-deployable-eap6.x.zip dest=/home/{{user_name}}/ copy=no owner=fedora group=fedora

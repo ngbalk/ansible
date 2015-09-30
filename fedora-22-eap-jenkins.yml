@@ -1,5 +1,5 @@
 - name: Update Fedora 22 Instance and Install EAP with Jenkins
-  hosts: web
+  hosts: jenkins_machine
   user: fedora
   vars:
     eap_version: 6.4.2

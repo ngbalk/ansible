@@ -1,7 +1,7 @@
 # Installs a workaround for https://github.com/ansible/ansible-modules-extras/issues/471
 # Updates packages via DNF
 
-- name: Install Yum Utilities
+- name: Install DNF Utilities
   sudo: true
   shell: dnf install yum-utils -y
   args:
