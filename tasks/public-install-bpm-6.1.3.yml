@@ -1,11 +1,11 @@
 # Installs a EAP 6.4 via Red Hat internal downloads
 
 - name: Copy BPM 6.1.2 
-  copy: src=files/jboss-bpmsuite-6.1.2.GA-redhat-3-deployable-eap6.x.zip dest=~/downloads/jboss-bpmsuite-6.1.2.GA-redhat-3-deployable-eap6.x.zip owner=fedora group=fedora
+  copy: src=files/jboss-bpmsuite-{{bpm_version}}.GA-redhat-3-deployable-eap6.x.zip dest=/home/{{user_name}}/downloads/jboss-bpmsuite-{{bpm_version}}.GA-redhat-3-deployable-eap6.x.zip owner={{user_name}} group={{user_name}}
 
 - name: Install unzip
   sudo: true
   dnf: name=unzip state=latest
 
 - name: Extract BPM
-  unarchive: src=~/downloads/jboss-bpmsuite-6.1.2.GA-redhat-3-deployable-eap6.x.zip dest=~ copy=no owner=fedora group=fedora
+  unarchive: src=/home/{{user_name}}/downloads/jboss-bpmsuite-{{bpm_version}}.GA-redhat-3-deployable-eap6.x.zip dest=/home/{{user_name}} copy=no owner={{user_name}} group={{user_name}}
