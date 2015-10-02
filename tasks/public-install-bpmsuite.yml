@@ -1,0 +1,4 @@
+# Installs a BPM 6.1 EAP 6.4 Bundle
+
+- name: Download and Extract 
+  unarchive: src=https://access.redhat.com/jbossnetwork/restricted/softwareDownload.html?softwareId=37673&product=bpm.suite dest=/home/{{user_name}}/ copy=no owner={{user_name}} group={{user_name}}

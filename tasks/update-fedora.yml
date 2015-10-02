@@ -22,3 +22,8 @@
 - name: Install vim 
   sudo: true
   dnf: name=vim state=latest
+
+- name: Install JDK 1.8
+  sudo: true
+  dnf: name=java-1.8.0-openjdk-devel state=latest
+

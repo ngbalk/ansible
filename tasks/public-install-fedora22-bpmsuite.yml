@@ -1,0 +1,12 @@
+# This playbox updates a fedora 22 instance and installs BPMS 6.1 and EAP 6.4
+
+- name: Install BPMS 6.1 on EAP 6.4 
+  hosts: bpm_machine
+  user: fedora
+  vars:
+    user_name: fedora
+
+  tasks:
+    - include: tasks/update-fedora.yml
+    - include: tasks/public-install-bpmsuite.yml
+    - include: tasks/start-bpm.yml
