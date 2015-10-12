@@ -2,7 +2,7 @@
   hosts: jenkins_machine
   user: fedora
   vars:
-    eap_version: 6.4.2
+    eap_version: 6.4.3
     user_name: fedora
 
   tasks:

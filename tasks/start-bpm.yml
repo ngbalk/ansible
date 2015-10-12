@@ -1,2 +1,2 @@
-- name: Start EAP in the background
-  shell: nohup ./bin/standalone-secure.sh & chdir=/home/{{user_name}}/jboss-eap-6.4
+- name: Start EAP with BPMS in the background
+  shell: nohup ./bin/standalone.sh & chdir=/home/{{user_name}}/jboss-eap-6.4

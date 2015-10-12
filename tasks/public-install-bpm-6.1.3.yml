@@ -1,11 +1,14 @@
-# Installs a EAP 6.4 via Red Hat internal downloads
+# Copies, extracts, and installs BPMS onto existing EAP instance 
+
+# Instructions: Manually download Red Hat Internal BPMS into /files directory
+# http://download.eng.bos.redhat.com/brewroot/repos/jb-ip-6.1-build/latest/maven/org/jboss/ip/jboss-bpmsuite/6.1.3.GA-redhat-2/jboss-bpmsuite-6.1.3.GA-redhat-2-deployable-eap6.x.zip
 
 - name: Copy BPM 6.1.2 
-  copy: src=files/jboss-bpmsuite-{{bpm_version}}.GA-redhat-3-deployable-eap6.x.zip dest=/home/{{user_name}}/downloads/jboss-bpmsuite-{{bpm_version}}.GA-redhat-3-deployable-eap6.x.zip owner={{user_name}} group={{user_name}}
+  copy: src=files/{{bpm_filename}} dest=/home/{{user_name}}/downloads/{{bpm_filename}} owner={{user_name}} group={{user_name}}
 
 - name: Install unzip
   sudo: true
   dnf: name=unzip state=latest
 
 - name: Extract BPM
-  unarchive: src=/home/{{user_name}}/downloads/jboss-bpmsuite-{{bpm_version}}.GA-redhat-3-deployable-eap6.x.zip dest=/home/{{user_name}} copy=no owner={{user_name}} group={{user_name}}
+  unarchive: src=/home/{{user_name}}/downloads/{{bpm_filename}} dest=/home/{{user_name}} copy=no owner={{user_name}} group={{user_name}}
