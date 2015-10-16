@@ -7,15 +7,7 @@
   file: path=/home/{{user_name}}/downloads state=directory mode=0755
 
 - name: Copy EAP 6.4.3
-  copy: src=files/{{eap_filename}} dest=/home/{{user_name}}/downloads/{{eap_filename}} owner=fedora group=fedora
-
-- name: Install unzip
-  sudo: true
-  dnf: name=unzip state=latest
+  copy: src=files/{{eap_filename}} dest=/home/{{user_name}}/downloads/{{eap_filename}} owner={{user_name}} group={{user_name}}
 
 - name: Extract EAP
-  unarchive: src=/home/{{user_name}}/downloads/{{eap_filename}} dest=/home/{{user_name}} copy=no owner=fedora group=fedora
-
-- name: Install JDK 1.8
-  sudo: true
-  dnf: name=java-1.8.0-openjdk-devel state=latest
+  unarchive: src=/home/{{user_name}}/downloads/{{eap_filename}} dest=/home/{{user_name}} copy=no owner={{user_name}} group={{user_name}}

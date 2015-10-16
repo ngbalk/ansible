@@ -1,0 +1,9 @@
+# Install Sonatype Plugin for Jenkins
+
+# Instructions: Manually download .hpi Sonatype plugin into ansible/files directory
+
+# Sonatype plugin
+# http://download.sonatype.com/clm/ci/sonatype-clm-ci-2.14.2-01.hpi?elqid=d68c23a6-5c1a-4919-bfce-09e93169cb4a
+
+- name: Copy Sonatype Plugin
+  copy: src=files/{{sonatype_plugin_filename}} dest=/home/{{user_name}}/.jenkins/plugins/{{sonatype_plugin_filename}} owner={{user_name}} group={{user_name}}

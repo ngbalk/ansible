@@ -1,0 +1,37 @@
+- name: Update Fedora 22 Instance and Install EAP with Jenkins
+  hosts: fedora22_nexus_test    
+  remote_user: fedora
+  vars:
+    eap_filename: jboss-eap-6.4.3-full-build.zip
+    nexus_filename: nexus-iq-server-1.17.0-02-bundle.zip
+    sonatype_plugin_filename: sonatype-clm-ci-2.14.2-01.hpi
+    user_name: fedora
+
+  tasks:
+    - include: tasks/update-fedora.yml
+    - include: tasks/public-install-eap-6.4.yml
+    - include: tasks/eap-6.4-configuration.yml
+    - include: tasks/install-jenkins.yml
+    - include: tasks/install-nexus.yml
+    - include: tasks/start-nexus.yml
+    - include: tasks/start-eap.yml
+    - include: tasks/install-sonatype-plugin.yml
+
+
+#######################################################
+# Test Machine:rhel7_jenkins_test (10.3.10.0)
+# Production Machine:rhel7_jenkins (10.3.8.223)
+
+# Manual Downloads
+# Download into ansible/files directory
+
+# JBoss EAP
+# http://download.devel.redhat.com/released/JBEAP-6/6.4.3/jboss-eap-6.4.3-full-build.zip
+
+# Nexus
+# http://download.sonatype.com/clm/server/nexus-iq-server-1.17.0-02-bundle.zip?elqid=d68c23a6-5c1a-4919-bfce-09e93169cb4a
+
+# Nexus .hpi Jenkins Plugin
+# http://download.sonatype.com/clm/ci/sonatype-clm-ci-2.14.2-01.hpi?elqid=d68c23a6-5c1a-4919-bfce-09e93169cb4a
+
+

@@ -1,0 +1,2 @@
+- name: Start Nexus on port:8070 in the background
+  shell: nohup ./demo.sh & chdir=/home/{{user_name}}/nexus
