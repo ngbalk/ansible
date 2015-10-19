@@ -16,6 +16,7 @@
     - include: tasks/start-nexus.yml
     - include: tasks/start-eap.yml
     - include: tasks/install-sonatype-plugin.yml
+    - include: tasks/install-jenkins-plugins.yml
 
 
 #######################################################

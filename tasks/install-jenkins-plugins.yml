@@ -1,0 +1,7 @@
+# Install Jenkins Plugins
+
+- name: Install Git Plugin
+  get_url: url=http://updates.jenkins-ci.org/download/plugins/git/2.4.0/git.hpi dest=/home/{{user_name}}/.jenkins/plugins
+
+- name: Install GitHub Plugin
+  get_url: url=http://updates.jenkins-ci.org/download/plugins/github/1.14.0/github.hpi dest=/home/{{user_name}}/.jenkins/plugins
