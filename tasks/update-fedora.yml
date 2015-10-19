@@ -31,3 +31,11 @@
   sudo: true
   dnf: name=java-1.8.0-openjdk-devel state=latest
 
+- name: Install Git 
+  sudo: true
+  dnf: name=git state=latest
+
+- name: Install Cowsay
+  sudo: true
+  dnf: name=cowsay state=latest
+
