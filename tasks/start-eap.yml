@@ -1,2 +1,5 @@
+- name: Wait for port 8080 to open up
+  wait_for: port=8080 delay=10 state="drained"
+
 - name: Start EAP in the background
   shell: nohup ./bin/standalone.sh & chdir=/home/{{user_name}}/jboss-eap-6.4

@@ -1,0 +1,2 @@
+- name: Stop EAP
+  shell: nohup ./bin/jboss-cli.sh --connect command=:shutdown & chdir=/home/{{user_name}}/jboss-eap-6.4
