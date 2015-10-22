@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<sonatype-clm plugin="sonatype-clm-ci@2.14.2-01">
+  <serverConfig/>
+  <clmServerConfig>
+    <location>http://localhost:8070/</location>
+    <username>admin</username>
+    <credentials class="hudson.util.Secret">admin123</credentials>
+    <instanceId>348bd5afc97246cf9f371909a5c4c7ba</instanceId>
+  </clmServerConfig>
+  <maskConfig>
+    <anonymizePaths>false</anonymizePaths>
+  </maskConfig>
+  <pathConfig>
+    <scanTargets></scanTargets>
+    <moduleExcludes></moduleExcludes>
+    <scanProperties></scanProperties>
+  </pathConfig>
+</sonatype-clm>

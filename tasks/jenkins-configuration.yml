@@ -1,0 +1,16 @@
+#Copy specific Jenkins configurations over to remote .jenkins directory
+
+- name: Check that .jenkins directory has been created
+  wait_for: path=/home/{{user_name}}/.jenkins/plugins
+
+- name: Copy over Jenkins config.xml
+  copy: src=files/jenkins-configurations/config.xml dest=/home/{{user_name}}/.jenkins owner={{user_name}} group={{user_name}}
+
+- name: Copy over plugin specific configurations to Jenkins
+  copy: src=files/jenkins-configurations/{{ item }} dest=/home/{{user_name}}/.jenkins owner={{user_name}} group={{user_name}}
+  with_items:
+    - "hudson.maven.MavenModuleSet.xml"
+    - "jenkins.mvn.GlobalMavenConfig.xml"
+    - "hudson.plugins.git.GitTool.xml"
+    - "hudson.tasks.Maven.xml"
+    - "sonatype-clm.xml"
