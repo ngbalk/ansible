@@ -4,4 +4,4 @@
      get_url: url=https://updates.jenkins-ci.org/download/war/1.630/jenkins.war dest=/home/{{user_name}}/downloads
 
    - name: Deploy Jenkins into EAP
-     command: cp /home/{{user_name}}/downloads/jenkins.war /home/{{user_name}}/jboss-eap-6.4/standalone/deployments/	
+     command: cp /home/{{user_name}}/downloads/jenkins.war /home/{{user_name}}/jboss-eap-6.4/standalone/deployments	

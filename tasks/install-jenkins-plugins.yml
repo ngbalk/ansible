@@ -11,4 +11,5 @@
     - "http://updates.jenkins-ci.org/latest/scm-api.hpi"
     - "http://updates.jenkins-ci.org/latest/mailer.hpi"
     - "http://updates.jenkins-ci.org/latest/matrix-project.hpi"
+    - "http://updates.jenkins-ci.org/latest/job-dsl.hpi"
 

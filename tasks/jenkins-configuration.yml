@@ -14,3 +14,6 @@
     - "hudson.plugins.git.GitTool.xml"
     - "hudson.tasks.Maven.xml"
     - "sonatype-clm.xml"
+
+- name: Copy seed job configuration into Jenkins jobs
+  copy: src=files/jenkins-seed-build/seed dest=/home/{{user_name}}/.jenkins/jobs owner={{user_name}} group={{user_name}}
