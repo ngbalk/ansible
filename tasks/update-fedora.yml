@@ -39,6 +39,10 @@
   sudo: true
   dnf: name=groovy state=latest
 
+- name: Install Maven
+  sudo: true
+  dnf: name=maven state=latest
+
 - name: Install Cowsay
   sudo: true
   dnf: name=cowsay state=latest
