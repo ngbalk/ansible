@@ -31,7 +31,7 @@
 <command>groovy generate-pom.groovy</command>
 </hudson.tasks.Shell>
 <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.39">
-<targets>*.groovy</targets>
+<targets>create-jobs.groovy</targets>
 <usingScriptText>false</usingScriptText>
 <ignoreExisting>false</ignoreExisting>
 <removedJobAction>IGNORE</removedJobAction>
