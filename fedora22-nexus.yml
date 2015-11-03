@@ -11,6 +11,7 @@
     - include: tasks/update-fedora.yml
     - include: tasks/public-install-eap-6.4.yml
     - include: tasks/eap-6.4-configuration.yml
+    ####- include: tasks/configure-maven.yml#####
     - include: tasks/install-jenkins.yml
     - include: tasks/install-nexus.yml
     - include: tasks/start-nexus.yml
