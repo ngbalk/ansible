@@ -47,3 +47,7 @@
   sudo: true
   dnf: name=cowsay state=latest
 
+- name: Install Which
+  sudo: true
+  dnf: name=which state=latest
+

@@ -1,0 +1,37 @@
+- name: Create Black Duck directory structure
+  sudo: true
+  file: path=/opt/blackduck/install state=directory
+
+- name: Download Black Duck Installer
+  sudo: true
+  get_url: url=https://updates.suite.blackducksoftware.com/appmgr.artifacts/bds-release/com/blackducksoftware/hub/appmgr.hubinstall.full/2.3.1/appmgr.hubinstall.full-2.3.1.zip?authToken=hub_trial_nb792045nbalkiss_0016000001A4Laf dest=/opt/blackduck/install validate_certs=no
+
+- name: Unzip Black Duck Installer
+  sudo: true
+  unarchive: src=/opt/blackduck/install/{{blackduck_filename}}.zip dest=/opt/blackduck/install copy=no
+
+- name: Copy Over Black Duck Pre-Installer Expect Script
+  sudo: true
+  copy: src=files/blackduck-preinstall.exp dest=/opt/blackduck
+
+- name: Run Black Duck Pre-Installer Expect Script
+  sudo: true
+  shell: expect blackduck-preinstall.exp chdir=/opt/blackduck
+
+- name: Change Ownership of Black Duck Directory to blckdck
+  sudo: true
+  file: path=/opt/blackduck state=touch owner=blckdck
+
+- name: Copy Over Black Duck Installer Expect Script
+  sudo: true
+  copy: src=files/blackduck-install.exp dest=/opt/blackduck
+
+- name: Run Black Duck Installer Expect Script
+  become: yes
+  become_user: blckdck
+  shell: expect blackduck-install.exp chdir=/opt/blackduck
+
+- name: Start Black Duck hub
+  become: yes
+  become_user: blckdck
+  shell: bash hubcontrol.sh & chdir=/opt/blackduck/hub/appmgr/bin

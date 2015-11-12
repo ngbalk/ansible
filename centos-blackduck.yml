@@ -1,0 +1,12 @@
+- name: Install Black Duck on a Centos Instance
+  hosts: blackduck_test   
+  remote_user: centos
+  vars:
+    user_name: centos
+    blackduck_filename: appmgr.hubinstall.full-2.3.1
+    blackduck_token: hub_trial_nb792045nbalkiss_0016000001A4Laf
+  tasks:
+    - include: tasks/update-centos.yml
+    - include: tasks/install-blackduck.yml
+
+# Command to run: ansible-playbook -i hosts centos-blackduck.yml
