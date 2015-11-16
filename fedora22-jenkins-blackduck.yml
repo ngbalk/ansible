@@ -1,0 +1,32 @@
+- name: Install Jenkins Build/Scan Pipeline on Fedora 22 Machine (Jenkins on EAP)
+  hosts: jenkins_test   
+  remote_user: fedora
+  vars:
+    eap_filename: jboss-eap-6.4.3-full-build.zip
+    user_name: fedora
+
+  tasks:
+    - include: tasks/update-fedora.yml
+    - include: tasks/public-install-eap-6.4.yml
+    - include: tasks/eap-6.4-configuration.yml
+    - include: tasks/configure-maven.yml
+    - include: tasks/install-jenkins.yml
+    - include: tasks/start-nexus.yml
+    - include: tasks/start-eap.yml
+    - include: tasks/install-jenkins-plugins.yml
+    - include: tasks/jenkins-configuration.yml
+    - include: tasks/stop-eap.yml
+    - include: tasks/start-eap.yml
+
+
+#######################################################
+
+# Host names found in ansible/hosts
+
+# Command to run: ansible-playbook -i hosts fedora22-jenkins-blackduck.yml
+
+# Manual Downloads
+# Download into ansible/files directory
+
+# JBoss EAP
+# http://download.devel.redhat.com/released/JBEAP-6/6.4.3/jboss-eap-6.4.3-full-build.zip
