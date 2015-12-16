@@ -28,7 +28,7 @@
 <concurrentBuild>false</concurrentBuild>
 <builders>
 <hudson.tasks.Shell>
-<command>groovy generate-pom.groovy</command>
+<command>bash injest.sh groovy generate-pom.groovy</command>
 </hudson.tasks.Shell>
 <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.39">
 <targets>create-jobs.groovy</targets>
