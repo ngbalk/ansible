@@ -1,0 +1,62 @@
+#!/usr/bin/expect -f
+
+spawn bash install/appmgr.hubinstall-2.3.1/bin/appmgr.hubinstall
+set timeout -1
+expect "PRESS <ENTER> TO CONTINUE"
+send "\r"
+
+expect "Do you use a Web Proxy to get external internet access?"
+send "n\r"
+
+expect "ENTER AN ABSOLUTE PATH, OR PRESS <ENTER> TO ACCEPT THE DEFAULT"
+send "\r"
+
+expect "Please enter the Registration Id you were provided:"
+send "hub_trial_nb792045nbalkiss_0016000001A4Laf\r"
+
+expect "Enter Home Directory (DEFAULT: /var/lib/blckdck/hub):"
+send "\r"
+
+expect "Port to use for PostgreSQL (DEFAULT: 55436)"
+send "\r"
+
+expect "Enter the directory used to store database dumps (/home/blackduck/hub):"
+send "\r"
+
+expect "Enter directory to use for SCM Fetch downloads (/home/blackduck/hub/fetches):"
+send "\r"
+
+expect "Enter directory to use for SCM Clones (/home/blackduck/hub/clones):"
+send "\r"
+
+expect "Use HTTPS Connection?"
+send "n\r"
+
+expect "Port (DEFAULT: 8080)"
+send "\r"
+
+expect "Shutdown Port (DEFAULT: 8009)"
+send "\r"
+
+expect "Redirect Port 80 to 8080?"
+send "n\r"
+
+expect "PRESS <ENTER> TO CONTINUE:"
+send "\r"
+
+expect "Enter (DEFAULT: /var/lib/blckdck/hub/solr):"
+send "\r"
+
+expect "Port (DEFAULT: 8983)"
+send "\r"
+
+expect "Shutdown Port (DEFAULT: 8909)"
+send "\r"
+
+expect "PRESS <ENTER> TO CONTINUE:"
+send "\r"
+
+expect "PRESS <ENTER> TO CONTINUE:"
+send "\r"
+
+expect eof

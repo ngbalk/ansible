@@ -1,0 +1,28 @@
+- name: Install wget 
+  sudo: true
+  yum: name=wget state=latest
+
+- name: Install unzip
+  sudo: true
+  yum: name=unzip state=latest
+
+- name: Install JDK 1.8
+  sudo: true
+  yum: name=java-1.8.0-openjdk-devel state=latest
+
+- name: Install Git 
+  sudo: true
+  yum: name=git state=latest
+
+- name: Install Maven
+  sudo: true
+  yum: name=maven state=latest
+
+- name: Install Which
+  sudo: true
+  yum: name=which state=latest
+
+- name: Install Expect
+  sudo: true
+  yum: name=expect state=latest
+

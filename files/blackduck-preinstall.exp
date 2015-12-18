@@ -1,0 +1,20 @@
+#!/usr/bin/expect -f
+
+spawn bash install/appmgr.hubinstall-2.3.1/bin/HubPreInstallSetup.sh
+set timeout -1
+expect "Continue (y/n)?"
+send "y\r"
+
+expect "New password:" 
+send "blackduck123\r"
+
+expect "Retype new password:"
+send "blackduck123\r"
+
+expect "Is this ok"
+send "y\r"
+
+expect "Is this ok"
+send "y\r"
+
+expect eof
