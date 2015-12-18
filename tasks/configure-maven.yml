@@ -1,2 +1,5 @@
+- name: Create .m2 directory
+  file: path=/home/{{user_name}}/.m2 state=directory mode=0755
+
 - name: Copy settings.xml to .m2 to enable Red Hat repositories in Maven
   copy: src=files/settings.xml dest=/home/{{user_name}}/.m2/settings.xml owner={{user_name}} group={{user_name}}

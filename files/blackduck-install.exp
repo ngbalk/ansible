@@ -12,7 +12,7 @@ expect "ENTER AN ABSOLUTE PATH, OR PRESS <ENTER> TO ACCEPT THE DEFAULT"
 send "\r"
 
 expect "Please enter the Registration Id you were provided:"
-send "hub_trial_nb792045nbalkiss_0016000001A4Laf\r"
+send "hub_trial_redhat_hub_jpmc\r"
 
 expect "Enter Home Directory (DEFAULT: /var/lib/blckdck/hub):"
 send "\r"
