@@ -1,3 +1,9 @@
+[jpmc_test]
+10.3.10.100
+
+[jenkins_sonatype_test]
+10.3.13.110
+
 [jenkins_test]
 10.3.10.0
 
@@ -7,3 +13,5 @@
 [crash_test]
 10.3.10.166
 
+[blackduck_test2]
+10.3.10.47

@@ -1,5 +1,5 @@
 - name: Install Black Duck on a Centos Instance
-  hosts: blackduck_test   
+  hosts: blackduck_test2   
   remote_user: centos
   vars:
     user_name: centos

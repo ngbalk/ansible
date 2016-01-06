@@ -14,6 +14,10 @@
   sudo: true
   copy: src=files/blackduck-preinstall.exp dest=/opt/blackduck
 
+- name: Copy Over Black Duck Installer Expect Script
+  sudo: true
+  copy: src=files/blackduck-install.exp dest=/opt/blackduck
+
 - name: Run Black Duck Pre-Installer Expect Script
   sudo: true
   shell: expect blackduck-preinstall.exp chdir=/opt/blackduck
@@ -21,10 +25,6 @@
 - name: Change Ownership of Black Duck Directory to blckdck
   sudo: true
   file: path=/opt/blackduck state=touch owner=blckdck
-
-- name: Copy Over Black Duck Installer Expect Script
-  sudo: true
-  copy: src=files/blackduck-install.exp dest=/opt/blackduck
 
 - name: Run Black Duck Installer Expect Script
   become: yes

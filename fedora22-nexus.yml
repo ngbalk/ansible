@@ -1,5 +1,5 @@
 - name: Update Fedora 22 Instance and Install EAP with Jenkins
-  hosts: jpmc_test   
+  hosts: jenkins_sonatype_test  
   remote_user: fedora
   vars:
     eap_filename: jboss-eap-6.4.3-full-build.zip

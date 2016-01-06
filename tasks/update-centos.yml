@@ -26,3 +26,7 @@
   sudo: true
   yum: name=expect state=latest
 
+- name: Install nc
+  sudo: true
+  yum: name=nc state=latest
+
