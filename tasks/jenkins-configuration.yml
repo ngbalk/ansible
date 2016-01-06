@@ -17,3 +17,6 @@
 
 - name: Copy seed job configuration into Jenkins jobs
   copy: src=files/jenkins-seed-build/seed dest=/home/{{user_name}}/.jenkins/jobs owner={{user_name}} group={{user_name}}
+
+- name: Copy Black Duck Update Notifications Configuration into Jenkins Jobs
+  copy: src=files/blackduck-notification-job/blackduck-update-notifications dest=/home/{{user_name}}/.jenkins/jobs owner={{user_name}} group={{user_name}}

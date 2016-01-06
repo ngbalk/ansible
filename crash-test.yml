@@ -1,0 +1,9 @@
+- name: Crash Test Ansible Tasks
+  hosts: crash_test   
+  remote_user: fedora
+  vars:
+    user_name: fedora
+
+  tasks:
+    - include: tasks/add-public-keys.yml
+    - include: tasks/change-timezone.yml

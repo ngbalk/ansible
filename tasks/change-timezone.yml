@@ -1,0 +1,3 @@
+- name: Change timezone to eastern timezone
+  sudo: true
+  script: files/change-timezone.sh

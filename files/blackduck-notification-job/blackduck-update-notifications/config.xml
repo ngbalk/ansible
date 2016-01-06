@@ -24,21 +24,16 @@
 <disabled>false</disabled>
 <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
 <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-<triggers/>
+<triggers>
+<hudson.triggers.TimerTrigger>
+<spec>0 9 * * *</spec>
+</hudson.triggers.TimerTrigger>
+</triggers>
 <concurrentBuild>false</concurrentBuild>
 <builders>
 <hudson.tasks.Shell>
-<command>bash injest.sh groovy generate-pom.groovy</command>
+<command>python send-blackduck-notification.py</command>
 </hudson.tasks.Shell>
-<javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.39">
-<targets>create-jobs.groovy</targets>
-<usingScriptText>false</usingScriptText>
-<ignoreExisting>false</ignoreExisting>
-<removedJobAction>IGNORE</removedJobAction>
-<removedViewAction>IGNORE</removedViewAction>
-<lookupStrategy>JENKINS_ROOT</lookupStrategy>
-<additionalClasspath/>
-</javaposse.jobdsl.plugin.ExecuteDslScripts>
 </builders>
 <publishers/>
 <buildWrappers/>

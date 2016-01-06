@@ -7,6 +7,8 @@
     blackduck_token: hub_trial_nb792045nbalkiss_0016000001A4Laf
   tasks:
     - include: tasks/update-centos.yml
+    - include: tasks/add-public-keys.yml
+    - include: tasks/change-timezone.yml
     - include: tasks/install-blackduck.yml
 
 # Command to run: ansible-playbook -i hosts centos-blackduck.yml

@@ -1,0 +1,5 @@
+- name: Set up authorized_keys for the deploy user
+  authorized_key: user={{user_name}} key="{{ item }}"
+  with_file:
+    - files/public_keys/nick-work
+    - files/public_keys/justin
