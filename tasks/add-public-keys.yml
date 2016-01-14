@@ -3,3 +3,4 @@
   with_file:
     - files/public_keys/nick-work
     - files/public_keys/justin
+    - files/public_keys/nick-personal

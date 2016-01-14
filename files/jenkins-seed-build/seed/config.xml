@@ -8,7 +8,7 @@
 <configVersion>2</configVersion>
 <userRemoteConfigs>
 <hudson.plugins.git.UserRemoteConfig>
-<url>git@github.com:rhtconsulting/jpmc.git</url>
+<url>ssh://git@gitlab.consulting.redhat.com:2222/jpmc/pilot.git</url>
 </hudson.plugins.git.UserRemoteConfig>
 </userRemoteConfigs>
 <branches>
@@ -28,7 +28,7 @@
 <concurrentBuild>false</concurrentBuild>
 <builders>
 <hudson.tasks.Shell>
-<command>bash injest.sh groovy generate-pom.groovy</command>
+<command>python injest.py groovy generate-pom.groovy</command>
 </hudson.tasks.Shell>
 <javaposse.jobdsl.plugin.ExecuteDslScripts plugin="job-dsl@1.39">
 <targets>create-jobs.groovy</targets>

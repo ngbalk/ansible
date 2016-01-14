@@ -8,7 +8,7 @@
 <configVersion>2</configVersion>
 <userRemoteConfigs>
 <hudson.plugins.git.UserRemoteConfig>
-<url>git@github.com:rhtconsulting/jpmc.git</url>
+<url>ssh://git@gitlab.consulting.redhat.com:2222/jpmc/pilot.git</url>
 </hudson.plugins.git.UserRemoteConfig>
 </userRemoteConfigs>
 <branches>

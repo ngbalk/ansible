@@ -51,3 +51,11 @@
   sudo: true
   dnf: name=which state=latest
 
+- name: Install pymongo
+  sudo: true
+  pip: name=pymongo
+
+- name: Install request
+  sudo: true
+  pip: name=request
+
